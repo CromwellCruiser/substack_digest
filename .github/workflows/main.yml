@@ -1,0 +1,30 @@
+name: Substack Daily Digest
+
+on:
+  schedule:
+    # Runs at 6:00 AM UTC (adjust as needed)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allows you to run it manually to test
+
+jobs:
+  run-digest:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib google-genai beautifulsoup4
+
+    - name: Run Digest Script
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        GMAIL_TOKEN_JSON: ${{ secrets.GMAIL_TOKEN_JSON }}
+      run: python substack_digest_gh.py
