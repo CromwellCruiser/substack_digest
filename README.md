@@ -1,9 +1,9 @@
 # Substack (G)mail Fetcher and Digest Creator
 Obsessive Substack newsletter subscribers rejoice!
 
-This repository provides a python file to be deployed as a Google Cloud Function (in conjunction with a Cloud Scheduler) to summarise the newsletters of the day into a daily digest email. 
+This repository provides a python file to be deployed as a Google Cloud Function (in conjunction with a Cloud Scheduler) to summarise the newsletters of the last 24 hours into a daily digest email. 
 
-It reads directly from a Gmail account (using the from:substack.com search), selecting emails from the last 24 hours and passing them to Gemini for summary. It then collates those summaries and outputs them in a relevancy-based order.
+It reads directly from a Gmail account through the Gmail API (using the from:substack.com search), selecting emails from the last 24 hours and passing them to Gemini for summary. It then collates those summaries and outputs them in a relevancy-based order.
 
 ## Parameters to be Tweaked
 1. Find the {persona} flag in the file and re-write it for your own use. Gemini's relevancy metrics leave something to be desired (if you are judicious in your selection of newsletters they will rarely get a 1-2 anyway) but some elementary triaging can occur, I think.
