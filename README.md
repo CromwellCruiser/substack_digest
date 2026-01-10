@@ -47,4 +47,4 @@ You'll need a Gmail API token in order for the script to access your email and s
 4. Otherwise, navigate to the Cloud Function, where under Observatbility there should be Logs. Use Gemini to find out what is wrong.
 
 
-Disclaimer: this script and all material is provided as is and without any warranties, guaranties, or securities of any sort. Use of this script is at your own risk and does not confer on you any legal claims over me. By downloading and using this script, even as described, you indemnify me from all undesirable results that may occur. Additional licence information in the relevant file.
+Disclaimer: this script and all material is provided as is and without any warranties, guaranties, or securities of any sort. Use of this script is at your own risk and does not confer on you any legal claims over me. By downloading and using this script, even as described, you indemnify me and my heirs and successors according to law from all undesirable results that may occur. Additional licence information in the relevant file.
