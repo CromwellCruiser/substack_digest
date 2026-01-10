@@ -29,9 +29,10 @@ You'll need a Gmail API token in order for the script to access your email and s
      GMAIL_TOKEN_JSON: paste the Gmail token fetched from the token.py script.\
      GEMINI_API_KEY: paste the API key.
 6. Request timeout > 3600.
-7. Now that the function is set up, click on the function in the [list of functions](https://console.cloud.google.com/run/services) and navigate to 'Source'. Click Edit Source (blue button) and click the plus sign on the left hand column which appears. Name two new files main.py and requirements. txt.
+7. Now that the function is set up, click on the function in the [list of functions](https://console.cloud.google.com/run/services) and navigate to 'Source'. Click Edit Source (blue button) and click the plus sign on the left hand column which appears. Name two new files main.py and requirements.txt.
 8. Paste the contents of two files in this repository into the two files you've just created respectively.
 9. For function entry point next to the edit source button: substack_digest
+10. Copy the URL that appears next to the 'region' specifier.
 
 ## 3. Setting up the Scheduler
 1. The Cloud Function does not work automatically and needs to be called, for this purpose we use the [Cloud Scheduler](https://console.cloud.google.com/cloudscheduler).
@@ -40,7 +41,7 @@ You'll need a Gmail API token in order for the script to access your email and s
     Frequency: 0 8 * * * \
 		(Note: This is 8:00 AM daily, use another time (24hr format), e.g. '22' if you'd like an evening digest instead.)\
     Target Type: HTTP\
-    URL: (Copy the "Trigger URL" from your Cloud Function 'Trigger' tab).\
+    URL: (Copy the URL that appears next to 'region' when you're on the main page for your Cloud function. You should have made a note of this)
     HTTP Method: GET\
     Auth Header: Add OIDC token (Select your default App Engine service account).
 3. Configure optional settings > Attempt deadline config: set to 30m. If you receive a lot of substack emails, the function may run longer than the default 3 minutes and lead to failure.
