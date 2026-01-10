@@ -17,7 +17,7 @@ You'll need a Gmail API token in order for the script to access your email and s
 4. Run token.py and copy the resulting JSON string into a text file. Keep this on hand.
 5. Navigate to [https://aistudio.google.com](https://aistudio.google.com/) and set up a new project to use Gemini with. Acquire the API token and copy this down to a text file. Also keep this on hand. You may wish to set up a billing account for Gemini API (see above) at this point.
 
-## Setting up Google Cloud Function
+## 2. Setting up Google Cloud Function
 1. Navigate to [https://console.cloud.google.com/run/services](https://console.cloud.google.com/run/services) and click on Create a New Function > Use an Inline Editor to Create a Function (rightmost radio button)
 2. Call your service something relevant and set up the right timezone. Copy the endpoint URL and paste this into a text file.
 3. Authentication > Require Authentication
@@ -30,7 +30,7 @@ You'll need a Gmail API token in order for the script to access your email and s
 8. Paste the contents of two files in this repository into the two files you've just created respectively.
 9. For function entry point next to the edit source button: substack_digest
 
-## Setting up the Scheduler
+## 3. Setting up the Scheduler
 1. The Cloud Function does not work automatically and needs to be called, for this purpose we use the [Cloud Scheduler](https://console.cloud.google.com/cloudscheduler).
 2. Create Job:\
     Name: daily-substack-summariser\
