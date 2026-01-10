@@ -38,14 +38,14 @@ You'll need a Gmail API token in order for the script to access your email and s
 ## 3. Setting up the Scheduler
 1. The Cloud Function does not work automatically and needs to be called, for this purpose we use the [Cloud Scheduler](https://console.cloud.google.com/cloudscheduler).
 2. Create Job:\
-    Name: daily-substack-summariser\
+    - Name: daily-substack-summariser\
    		- (or other name that works for you)\
-    Frequency: 0 8 * * * \
+    - Frequency: 0 8 * * * \
 		- (Note: This is 8:00 AM daily, use another time (24hr format), e.g. '22' if you'd like an evening digest instead.)\
-    Target Type: HTTP\
-    URL: (Copy the URL that appears next to 'region' when you're on the main page for your Cloud function. You should have made a note of this)
-    HTTP Method: GET\
-    Auth Header: Add OIDC token (Select your default App Engine service account).
+    - Target Type: HTTP\
+    - URL: (Copy the URL that appears next to 'region' when you're on the main page for your Cloud function. You should have made a note of this)\
+    - HTTP Method: GET\
+    - Auth Header: Add OIDC token (Select your default App Engine service account).
 4. Configure optional settings > Attempt deadline config: set to 30m. If you receive a lot of substack emails, the function may run longer than the default 3 minutes and lead to failure.
 5. To test it, navigate back to the Cloud Scheduler and use Actions > Force Run. If you get an email in a few (or ten+) minutes, success.
 6. Otherwise, navigate to the Cloud Function, where under Observatbility there should be Logs. Use Gemini to find out what is wrong.
