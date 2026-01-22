@@ -46,7 +46,7 @@ You'll need a Gmail API token in order for the script to access your email and s
 	- Auth Header: Add OIDC token (Select your default App Engine service account).
 4. Configure optional settings > Attempt deadline config: set to 30m. If you receive a lot of substack emails, the function may run longer than the default 3 minutes and lead to failure.
 5. To test it, navigate back to the Cloud Scheduler and use Actions > Force Run. If you get an email in a few (or ten+) minutes, success.
-6. Otherwise, navigate to the Cloud Function, where under Observatbility there should be Logs. Use Gemini to find out what is wrong.
+6. Otherwise, navigate to the Cloud Function, where under Observability there should be Logs. Use Gemini to find out what is wrong.
 
 
 Disclaimer: this script and all material is provided as is and without any warranties, guaranties, or securities of any sort. Use of this script is at your own risk and does not confer on you any legal claims over me. By downloading and using this script, even as described, you indemnify me and my heirs and successors according to law from all undesirable results that may occur. Additional licence information in the relevant file.
