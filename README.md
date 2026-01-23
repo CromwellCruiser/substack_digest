@@ -9,6 +9,7 @@ It reads directly from a Gmail account through the Gmail API (using the from:sub
 1. Find the {persona} flag in the file and re-write it for your own use. Gemini's relevancy metrics leave something to be desired (if you are judicious in your selection of newsletters they will rarely get a 1-2 anyway) but some elementary triaging can occur, I think.
 2. Gemini model: use another Gemini model if you have the authority to do so. 2.5 Flash works for me and for other free users (just set up a billing account but don't authorise billing to enable 'paid tier 1' status which should enable processing at scale)
 3. Tweak the Gemini prompt to something that works for you. I'm still experimenting with mine, as I am with the relevancy factor.
+4. Tweak the Gmail search to anything you like. In conjunction with tweaks to the scheduler, you can set this up as a weekly or twice-daily summariser.
 
 ## 1. Getting the Tokens
 You'll need a Gmail API token in order for the script to access your email and send you a digest from yourself. You'll also need a Gemini API token for Gemini to summarise the things for you.
