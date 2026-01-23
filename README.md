@@ -49,5 +49,26 @@ You'll need a Gmail API token in order for the script to access your email and s
 5. To test it, navigate back to the Cloud Scheduler and use Actions > Force Run. If you get an email in a few (or ten+) minutes, success.
 6. Otherwise, navigate to the Cloud Function, where under Observability there should be Logs. Use Gemini to find out what is wrong.
 
+## 4. Notes on the Unix-cron String Format
+Here are notes on setting up the five-field Unix-cron string for more sophisticated scheduling.
+1. The Five Fields of a Cron Schedule\
+The format follows this order: Minutes, Hours, Day-of-month, Month, Day-of-week. \
+Field | Description | Values\
+1	Minute	0-59\
+2	Hour	0-23 (12:00 a.m. - 11:00 p.m.)\
+3	Day of month	1-31\
+4	Month	1-12\
+5	Day of week	0-7 (0 or 7 is Sunday)\
+
+	* (Asterisk): Represents "all" or "every" (e.g., * in the hour field means every hour).
+Numbers: Represent specific times (e.g., 5 in the minute field means at the 5th minute of the hour).
+Ranges/Lists: You can use , for lists (e.g., 1,15,30) or - for ranges (e.g., 1-5). 
+
+2. Examples of Frequency Setups
+	 - Run every 5 minutes: */5 * * * *
+	 - Run at 5:00 AM every day: 0 5 * * *
+	 - Run on the 5th day of the month at 12:00 PM: 0 12 5 * *
+	 - Run every Friday at 5:00 PM: 0 17 * * 5
+	 - Run at 1:05 AM, 1:15 AM, 1:25 AM, 1:35 AM, 1:45 AM daily: 5,15,25,35,45 1 * * *
 
 Disclaimer: this script and all material is provided as is and without any warranties, guaranties, or securities of any sort. Use of this script is at your own risk and does not confer on you any legal claims over me. By downloading and using this script, even as described, you indemnify me and my heirs and successors according to law from all undesirable results that may occur. Additional licence information in the relevant file.
