@@ -18,8 +18,8 @@ You'll need a Gmail API token in order for the script to access your email and s
 3. OAuth Credentials (for the Token Script):
     - In Google Cloud Platform Console: APIs & Services > Credentials.
     - Create Credentials > OAuth client ID > Desktop App.
-    - Download the JSON file and rename it to credentials.json for the token.py script. Save it in the same folder as the script.
-4. Run token.py and copy the resulting JSON string into a text file. Keep this on hand.
+    - Download the JSON file and rename it to credentials.json for the generate_user_token.py script. Save it in the same folder as the script.
+4. Run generate_user_token.py and copy the resulting JSON string into a text file. Keep this on hand.
 5. Navigate to [https://aistudio.google.com](https://aistudio.google.com/) and set up a new project to use Gemini with. Acquire the API token and copy this down to a text file. Also keep this on hand. You may wish to set up a billing account for Gemini API (see above) at this point.
 
 ## 2. Setting up Google Cloud Function
